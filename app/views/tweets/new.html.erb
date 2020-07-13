@@ -1,23 +1,8 @@
 <div class="contents row">
   <div class="container">
-    <%= form_with model: @tweet, local: true do |f| %>
-    <H3>投稿する</h3>
-    <%= f.text_field :name, placeholder: 'ニックネーム' %>
-    <%= f.text_field :image,placeholder: 'image URL' %>
-    <%= f.text_area :text, placeholder: '説明', rows: 10 %>
-    <%= f.submit "SEND" %>
-    <% end %>
-  </div>
-</div>
-
-<div class="contents row">
-  <div class="container">
-    <%= form_with(model: @tweet, local: true) do |form| %>
+    <%= form_with model: @tweet, local: true do |form| %>
       <h3>投稿する</h3>
-      <%= form.text_field :name, placeholder: "Nickname" %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
-      <%= form.text_area :text, placeholder: "text" , rows: "20" %>
-      <%= form.submit "SEND" %>
+      <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
 </div>
