@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     tweet.delete
     # redirect_to root_path
   end
-  
+
   def search
     @tweets = Tweet.search(params[:keyword]).includes(:user).order("created_at DESC")
   end
