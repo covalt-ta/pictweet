@@ -34,7 +34,7 @@ class TweetsController < ApplicationController
   end
 
   def search
-    @tweets = Tweet.search(params[:keyword]).includes(:user).order("created_at DESC")
+    @tweets = SearchTweetsService.search_tweets(params[:keyword]).includes(:user).order("created_at DESC")
   end
 
   private
